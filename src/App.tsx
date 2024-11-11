@@ -1,7 +1,13 @@
 
+import { MainLayout } from "./Layouts/MainLayout";
+import { HomePage } from "./Pages/HomePage";
+
+
 const App = () => {
   return (
-    <div>App</div>
+    <MainLayout>      
+      <HomePage />
+    </MainLayout>
   )
 }
 export default App
