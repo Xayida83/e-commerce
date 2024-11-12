@@ -1,0 +1,166 @@
+:root {
+  --body: #ff533e;
+  --mouth: #000000;
+  --feather: #939393;
+  --beak-top: #080808;
+  --beak-down: #aa4c21;
+  --leg: #a0daf1;
+  --body-color: #e3edf7;
+}
+
+.container {
+  width: 200px; /* 50% av 400px */
+  height: 142px; /* 50% av 400px */
+  position: relative;
+  margin: 20px 0 0 0;
+}
+
+.body,  .mouth,  .feather,  .tail, .beak, .mouth::before, .mouth::after, .leg, .leg::after, .leg::before {
+  position: absolute;
+}
+.body,  .mouth, .feather, .beak, .mouth::before, .mouth::after  {
+  border-radius: 50%;
+}
+
+.body {
+  top: 13px; /* 50% av 26px */
+  left: 25px; /* 50% av 50px */
+  height: 90px; /* 50% av 180px */
+  width: 100px; /* 50% av 200px */
+  transform: rotate(-17deg);
+  background: linear-gradient(to bottom, transparent 0%, transparent 20%, var(--body) 20%);
+  z-index: 2;
+}
+
+.mouth {    
+  background:  var(--mouth);
+  top: 10px; /* 50% av 20px */
+  left: -87.5px; /* 50% av -175px */
+  width: 50px; /* 50% av 100px */
+  height: 50px; /* 50% av 100px */
+  transform: rotate(-17deg);
+  z-index: 5;
+  animation: animate-mouth 1.5s forwards;
+  animation-delay: 2s;
+}
+
+@keyframes animate-mouth {
+  100% {
+      left: 87.5px; /* 50% av 175px */
+  }
+}
+.mouth::before {
+  content: "";
+  width: 15px; /* 50% av 30px */
+  height: 15px; /* 50% av 30px */
+  background: white;
+  position: absolute;
+  top: 10px; /* 50% av 20px */
+  left: 20px; /* 50% av 40px */
+}
+.mouth::after {
+  content: "";
+  width: 5px; /* 50% av 10px */
+  height: 5px; /* 50% av 10px */
+  background: black;
+  position: absolute;
+  top: 15px; /* 50% av 30px */
+  left: 27.5px; /* 50% av 55px */
+  animation: animate-eye 1s infinite;
+  animation-delay: 4s;
+}
+
+@keyframes animate-eye {
+  50% {
+      height: 2.5px; /* 50% av 5px */
+  }
+}
+
+.feather {
+  z-index: 4;
+  left: 22px; /* 50% av 44px */
+  top: -103px; /* 50% av -206px */
+  width: 75px; /* 50% av 150px */
+  height: 75px; /* 50% av 150px */
+  background: linear-gradient(to bottom, transparent 0%, transparent 50%, var(--feather) 50%);
+  transform: rotate(-17deg);
+  animation: animate-feather 1.5s forwards;
+  animation-delay: 2s;
+}
+
+@keyframes animate-feather {
+  100% {
+      top: -3px; /* 50% av -6px */
+  }
+}
+
+.tail {
+  width: 75px; /* 50% av 150px */
+  height: 30px; /* 50% av 60px */
+  background-color: var(--mouth);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+  top: 46px; /* 50% av 92px */
+  left: 162px; /* 50% av 324px */
+  transform: rotate(-17deg);
+  z-index: 3;
+  animation: animate-tail 1.5s forwards;
+  animation-delay: 2s;
+}
+@keyframes animate-tail {
+  100% {
+      left: -12px; /* 50% av -24px */
+  }
+}
+.beak {
+  height: 50px; /* 50% av 100px */
+  width: 50px; /* 50% av 100px */
+  background: linear-gradient(to bottom, var(--beak-top) 0%, var(--beak-top) 15%, transparent 15% );
+  left: 112px; /* 50% av 224px */
+  top: 120px; /* 50% av 240px */
+  z-index: -1;
+  transform: rotate(-17deg);
+  animation: animate-beak 1.5s forwards;
+  animation-delay: 2s;
+}
+@keyframes animate-beak {
+  100% {
+      top: 20px; /* 50% av 40px */
+  }
+}
+.leg {
+  background: var(--leg);
+  height: 25px; /* 50% av 50px */
+  width: 5px; /* 50% av 10px */
+  border-radius: 10px;
+  top: 257.5px; /* 50% av 515px */
+  left: 62.5px; /* 50% av 125px */
+  transform: rotate(-15deg);
+  z-index: 1;
+  animation: animate-leg 1.5s forwards;
+  animation-delay: 2s;
+}
+@keyframes animate-leg {
+  100% {
+      top: 107.5px; /* 50% av 215px */
+  }
+}
+.leg::before {
+  bottom: -4px; /* 50% av -8px */
+  content: "";
+  width: 20px; /* 50% av 40px */
+  height: 4.5px; /* 50% av 9px */
+  background: var(--leg);
+  border-radius: 10px;
+  transform: rotate(15deg);
+  z-index: -1;
+}
+.leg::after {
+  top: -4px; /* 50% av -8px */
+  content: "";
+  width: 15px; /* 50% av 30px */
+  height: 4.5px; /* 50% av 9px */
+  background: var(--leg);
+  border-radius: 10px;
+  transform: rotate(-15deg);
+  z-index: -1;
+}

@@ -1,6 +1,6 @@
 
 import { MainLayout } from "./Layouts/MainLayout";
-import { HomePage } from "./Pages/HomePage";
+import { HomePage } from "./Pages/HomePage/HomePage";
 
 
 const App = () => {
