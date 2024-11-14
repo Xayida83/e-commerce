@@ -1,11 +1,12 @@
+import { ReactNode } from "react";
 
 
-interface MainLayoutProps {
-
-  children: React.ReactNode;
+type MainLayoutProps ={
+  children: ReactNode;
 }
 
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+  // ({children}: CardProps)
   return (
     <>
     {/* Navabar*/}
