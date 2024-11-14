@@ -1,11 +1,8 @@
-import express, { Request, Response } from 'express';
-import { products } from '../data/products';
+import express from 'express';
+import { getAllProducts } from '../controllers/productController';
 
 const router = express.Router();
 
-// Endpoint för att hämta alla produkter
-router.get('/products', (req: Request, res: Response) => {
-  res.json(products);
-});
+router.get('/products', getAllProducts);
 
 export default router;
